@@ -1,0 +1,103 @@
+/* =====================================================================
+   ws.css · 문제 칸 · 저장하기 (style.css 다음에 불러옵니다)
+   ===================================================================== */
+/* 공통 */
+.btn.arm{border-color:var(--s4);background:var(--miss-bg);color:var(--miss-ink)}
+.ws-msg.ok{color:var(--imp-ink)}
+.ws-msg.warn{color:var(--out-ink)}
+.btn.danger{color:var(--out-ink);border-color:color-mix(in oklab,var(--out-ink) 40%,var(--line-2))}
+
+/* 문제 카드 */
+.card.ws{border:1.5px solid color-mix(in oklab,var(--accent) 45%,var(--line));box-shadow:inset 4px 0 0 var(--accent)}
+.card.ws.plain{border:1px solid var(--line);box-shadow:none}   /* 짝꿍 활동: 시뮬레이션 카드와 같은 테두리 */
+.ws-eye{color:var(--accent);font-weight:700;letter-spacing:.04em}
+.ws-pg{font-size:13.5px;font-weight:500;color:var(--muted);margin-left:4px}
+.ws-l{margin:0;line-height:2.05}
+.ws-q{margin:6px 0 0;font-weight:700;line-height:1.7}
+.ws-cap{margin:-2px 0 0;font-size:14px;color:var(--muted);text-align:center}
+.ws-formula{margin:2px 0;text-align:center;font-family:var(--mono);font-size:19px;background:var(--surface-2);border-radius:8px;padding:8px}
+.ws-formula.sm{font-size:15.5px;padding:6px}
+.ws-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px}
+.ws-msg{font-size:14.5px;color:var(--ink-2)}
+.ws-bl{white-space:nowrap}
+.ws-in{font:inherit;font-weight:600;color:var(--accent);text-align:center;border:0;border-bottom:1.5px solid var(--line-2);background:transparent;padding:0 2px;margin:0 2px;min-width:2.5em}
+.ws-in:focus{outline:none;border-bottom-color:var(--accent);background:var(--accent-weak)}
+.ws-cell{width:100%;min-width:3.2em;border:1px solid var(--line-2);border-radius:6px;padding:3px 4px;margin:0}
+.ws-t td,.ws-t th{text-align:center;vertical-align:middle}
+.ws-t td.l,.ws-t th.l{text-align:left}
+.ws-t.act td{padding:4px 3px}
+.ws-t.act .ws-cell{min-width:2.8em}
+.ws-t.t1 td,.ws-t.t1 th{padding:5px 6px}
+/* [표1]: 이름 칸은 글자 폭만큼만, 열마다 세로선 */
+.ws-t.t1 th.l,.ws-t.t1 td.l{white-space:nowrap;padding-right:14px}
+.ws-t.t1 th:not(.l),.ws-t.t1 td:not(.l){width:10%}
+.ws-t.t1 th+th,.ws-t.t1 td+td{border-left:1px solid var(--line)}
+.ws-ta{font:inherit;width:100%;box-sizing:border-box;border:1px solid var(--line-2);border-radius:8px;padding:8px 10px;background:var(--surface);color:var(--ink);resize:vertical;line-height:1.6}
+.ws-ta:focus,.ws-cell:focus{outline:2px solid var(--accent);outline-offset:1px}
+.ws-ref{font-family:var(--mono);color:var(--ink-2)}
+
+/* 고르기 · ○표 */
+.ws-pick{display:inline-flex;flex-wrap:wrap;gap:4px;vertical-align:middle}
+.ws-pick label,.ws-o{cursor:pointer}
+.ws-pick input,.ws-o input,.ws-mc-o input{position:absolute;opacity:0;pointer-events:none}
+.ws-pick span{display:inline-block;border:1px solid var(--line-2);border-radius:999px;padding:2px 11px;font-size:15px;background:var(--surface)}
+.ws-pick input:checked+span{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);font-weight:600}
+.ws-pick input:focus-visible+span,.ws-o input:focus-visible+span,.ws-mc-o input:focus-visible+span{outline:2px solid var(--accent);outline-offset:2px}
+.ws-o span{display:inline-grid;place-items:center;width:34px;height:34px;border:1px dashed var(--line-2);border-radius:50%;color:transparent;font-size:20px;font-weight:700}
+.ws-o:hover span{border-color:var(--accent)}
+.ws-o input:checked+span{color:var(--accent);border:2px solid var(--accent);background:var(--accent-weak)}
+.ws-mc{display:grid;gap:6px;padding-top:6px;border-top:1px solid var(--line)}
+.ws-mc:first-of-type{border-top:0;padding-top:0}
+.ws-mc-o{display:grid;gap:5px}
+.ws-mc-o label{cursor:pointer}
+.ws-mc-o span{display:block;border:1px solid var(--line-2);border-radius:8px;padding:6px 12px;background:var(--surface)}
+.ws-mc-o input:checked+span{border-color:var(--accent);background:var(--accent-weak);font-weight:600}
+details.ws-after{border-style:solid}
+.ws-submit{border:1.5px solid var(--accent)}
+
+/* 오른쪽 위 저장하기 버튼 */
+.fab{position:fixed;top:14px;right:14px;z-index:30;display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.fab-btn{font:inherit;font-size:15px;font-weight:700;border:0;border-radius:999px;padding:9px 18px;cursor:pointer;background:var(--accent);color:var(--accent-ink);box-shadow:0 8px 22px -8px rgba(0,0,0,.45)}
+.fab-btn:hover{filter:brightness(1.07)}
+.fab-btn:disabled{opacity:.7;cursor:wait}
+.fab-btn.ok{background:var(--imp-ink);color:#fff}
+.fab-btn.warn{background:var(--s4);color:#2a1a00}
+.fab-msg{font-size:13.5px;line-height:1.5;color:var(--ink-2);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:6px 10px;max-width:250px}
+.fab-msg:empty{display:none}
+.fab-msg.ok{color:var(--imp-ink)}.fab-msg.warn{color:var(--out-ink)}
+
+@media (max-width:700px){
+  .fab{top:auto;bottom:14px}
+}
+
+/* 5단계 비교 그래프 */
+.cf-grid{stroke:var(--grid);stroke-width:1}
+.cf-axt{fill:var(--ink-2);font-size:12.5px}
+.cf-tagt{font-size:10.5px}
+
+/* 접기 상자 안의 정리 상자: 이름표와 설명 글을 같은 줄에 맞춤 */
+details .insight{align-items:baseline;margin-top:10px}
+details .insight p{margin:0;color:var(--ink)}
+
+/* 2단계 ⑤ 아래 최적 직선 그래프 */
+.ws-fig{margin:4px 0 0;display:grid;gap:4px;justify-items:center}
+.ws-fig .chart{max-width:560px;width:100%}
+.ws-fig figcaption{font-size:14.5px;color:var(--ink-2);text-align:center}
+
+/* 짝꿍 활동 ① 아래에 넣은 광고비와 매출액 시뮬레이션 */
+.ws-sim{display:grid;gap:10px;border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--surface);min-width:0}
+
+/* 5단계 k-평균: 그래프 옆에 표를 함께 두어 한 화면에서 보기 (그래프는 스크롤해도 따라옴) */
+.sim2.km-wide{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr)}
+.sim2.km-wide>div:first-child{position:sticky;top:12px}
+.sim2.km-wide table{font-size:14px}
+.sim2.km-wide th,.sim2.km-wide td{padding:4px 6px;white-space:normal}
+.sim2.km-wide .sec-t{font-size:14px}
+@media (max-width:860px){.sim2.km-wide{grid-template-columns:minmax(0,1fr)}.sim2.km-wide>div:first-child{position:static}}
+
+/* 6단계: 산점도 · [그래프 A] · [그래프 B]를 한 줄에 나란히 */
+.ev3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-items:start}
+.ev3>div{display:grid;gap:4px;min-width:0}
+.ev3 svg.chart{width:100%;max-width:none!important}
+@media (max-width:1100px){.ev3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:700px){.ev3{grid-template-columns:minmax(0,1fr)}}

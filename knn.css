@@ -1,0 +1,85 @@
+/* =====================================================================
+   knn.css · KNN 앱 전용 (style.css · ws.css 다음에 불러옵니다)
+   ===================================================================== */
+.chart .pt.hol{fill:var(--surface);stroke:var(--g);stroke-width:1.8}
+.chart .pt.te{opacity:.75}
+.chart .qstar{fill:var(--ink);stroke:var(--surface);stroke-width:1.5;cursor:grab}
+.chart .nb-ring{fill:color-mix(in oklab,var(--accent) 8%,transparent);stroke:var(--accent);stroke-width:1.3;stroke-dasharray:5 4}
+.chart .reg{fill:color-mix(in oklab,var(--g) 24%,transparent)}
+.chart .dlab{font-size:12.5px;paint-order:stroke;stroke:var(--surface);stroke-width:3px}
+.chart .rk{fill:var(--accent);font-size:12.5px}
+.chart .kline{stroke:var(--accent);stroke-width:1.5;stroke-dasharray:4 3}
+.chart .acc-tr{fill:none;stroke:var(--s1);stroke-width:2}
+.chart .acc-te{fill:none;stroke:var(--s2);stroke-width:2.2}
+.chart .acc-dot.tr{fill:var(--s1)}
+.chart .acc-dot.te{fill:var(--s2)}
+.knn-leg{margin-top:6px}
+.knn-leg .sh{font-style:normal;display:inline-block;width:10px;height:10px;margin-right:6px;background:var(--g);vertical-align:0}
+.knn-leg .sh.s0{border-radius:50%}
+.knn-leg .sh.s1{transform:rotate(45deg) scale(.85)}
+.knn-leg .sh.s2{clip-path:polygon(50% 0,100% 100%,0 100%)}
+.knn-leg .sh.st,.knn-leg .sh.rg,.knn-leg .sh.ho{background:none;width:auto;height:auto;color:var(--ink)}
+.knn-leg .ln{display:inline-block;width:16px;height:3px;border-radius:2px;margin-right:6px;vertical-align:3px}
+.knn-leg .ln.tr{background:var(--s1)}.knn-leg .ln.te{background:var(--s2)}
+.vote{display:grid;gap:6px;margin:6px 0}
+.vrow{display:grid;grid-template-columns:5.5em 1fr 2em;gap:8px;align-items:center;font-size:15px}
+.vrow b{text-align:right;font-variant-numeric:tabular-nums}
+.vbar{height:14px;border-radius:7px;background:var(--surface-2);overflow:hidden}
+.vbar i{display:block;height:100%;background:var(--g);transition:width .2s}
+.vres{margin:4px 0 0;font-size:16px}
+.vres b{color:var(--g);filter:brightness(.85)}
+.ws-short{width:6em;display:inline-block}
+.ws-fig{margin:4px auto;max-width:440px;text-align:center}
+.ws-fig figcaption{font-size:14px;color:var(--muted)}
+tr.sel td{background:var(--accent-weak)}
+
+/* 0단계: 기계 학습의 종류 */
+.ml-tree{margin:6px 0;display:grid;gap:10px;justify-items:center}
+.mt-root{font-weight:700;border:1.5px solid var(--ink-2);border-radius:999px;padding:4px 18px}
+.mt-kids{display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%}
+.mt-box{border:1.5px solid var(--line-2);border-radius:12px;padding:10px 12px;display:grid;gap:4px;text-align:center;background:var(--surface)}
+.mt-box>b{font-size:18px}
+.mt-box>small{color:var(--ink-2);font-size:14px}
+.mt-box.sup{border-color:color-mix(in oklab,var(--accent) 55%,var(--line))}
+.mt-box.sup>b{color:var(--accent)}
+.mt-leaf{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:4px}
+.mt-leaf span{display:grid;gap:2px;border-radius:8px;background:var(--surface-2);padding:6px}
+.mt-leaf small{font-size:13px;color:var(--muted);line-height:1.4}
+.ml-tree figcaption{font-size:14.5px;color:var(--ink-2)}
+@media (max-width:640px){.mt-kids{grid-template-columns:1fr}}
+.card>dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:0;font-size:16px}
+.card>dl dt{font-weight:700;color:var(--accent)}
+.card>dl dd{margin:0;color:var(--ink-2)}
+.ws-formula.math{font-family:var(--sans);font-size:22px;padding:10px 8px}
+.ws-formula.math math{font-size:1.15em}
+.chart .leg-x{stroke:var(--s1);stroke-width:2.4}
+.chart .leg-y{stroke:var(--s5);stroke-width:2.4}
+.chart .dlab.lx{fill:var(--s1);font-weight:700;font-size:14px}
+.chart .dlab.ly{fill:var(--s5);font-weight:700;font-size:14px}
+.ws-sim{border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:grid;gap:8px;background:var(--surface)}
+.dif-box{display:grid;gap:8px;margin:8px 0}
+.dif-box p{margin:0;display:grid;gap:2px;border-radius:8px;padding:8px 12px;background:var(--surface-2)}
+.dif-box p:first-child{box-shadow:inset 3px 0 0 var(--s1)}
+.dif-box p:last-child{box-shadow:inset 3px 0 0 var(--s5)}
+.dif-box span{font-size:14px;color:var(--muted)}
+.dif-box b{font-family:var(--mono);font-size:18px;font-weight:600}
+.muted-dash{color:var(--muted);font-weight:400}
+.sim2.ref{align-items:start}
+.sim2.ref .ws-t td{padding:5px 8px}
+.chart .dist.near.thin{stroke-width:1.4;opacity:.8}
+/* 범례의 ★: 그래프의 별과 같은 모양 */
+.knn-leg .leg-star{width:13px;height:13px;margin-right:6px;vertical-align:-1px;overflow:visible}
+.knn-leg .leg-star path{fill:var(--ink);stroke:var(--surface);stroke-width:1.5}
+/* 범례 칩을 한 줄에 */
+.knn-leg{gap:4px;flex-wrap:nowrap;white-space:nowrap}
+.knn-leg .chip{font-size:13px;padding:1px 8px}
+/* 5번 과일 10개 표: 내용 폭만큼만 + 옆에 시뮬레이터 */
+.t10{display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px;align-items:start}
+.t10 .tw{width:fit-content;max-width:100%}
+.ws-t.tx{width:auto}
+.ws-t.tx th:not(.l),.ws-t.tx td:not(.l){width:auto;padding:5px 14px;white-space:nowrap}
+.t10 .ws-sim svg.chart{max-width:440px}
+.chart .pt.dim{opacity:.45}
+@media (max-width:1000px){.t10{grid-template-columns:1fr}}
+.acc-facts{flex-direction:column;gap:14px}
+.acc-row{align-items:center}

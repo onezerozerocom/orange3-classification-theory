@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>분류 모델</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="ws.css">
+<link rel="stylesheet" href="knn.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1>분류 모델</h1>
+    <p class="lede">각 단계에서 ★을 <b>끌거나</b> k를 <b>바꾸어</b> 살펴보면서, 빈칸과 질문에 직접 답을 써 보세요.<br>오른쪽 위 <b>저장하기</b>(또는 Ctrl + S)를 누르면 이 브라우저에 저장되어, 다음에 다시 열어도 이어서 풀 수 있습니다.</p>
+    <ol class="flow" id="flow" aria-label="풀이 흐름"></ol>
+  </header>
+  <div class="app">
+    <nav class="rail" aria-label="학습 단계">
+      <ol id="rail"></ol>
+      <div class="prog" id="prog"></div>
+    </nav>
+    <main id="main"></main>
+  </div>
+  <footer>CLASSIFICATION · 분류 이론 시뮬레이션 · 직접 풀기</footer>
+</div>
+
+<div class="fab" role="region" aria-label="저장">
+  <button type="button" class="fab-btn" id="saveBtn">저장하기</button>
+  <span class="fab-msg" id="fabMsg" aria-live="polite"></span>
+</div>
+<div id="tip" hidden></div>
+
+<script src="lib.js"></script>
+<script src="app.js"></script>
+<script src="ws.js"></script>
+<script src="core.js"></script>
+</body>
+</html>
